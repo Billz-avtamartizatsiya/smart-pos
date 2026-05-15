@@ -1,132 +1,27 @@
-<!DOCTYPE html>
-<html lang="uz">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Premium Business Lead</title>
+<input type="text" id="name" placeholder="Ismingiz"/>
+<input type="text" id="phone" placeholder="Telefon raqam"/>
+<input type="text" id="city" placeholder="Shahar / Tuman"/>
 
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #0a0a0a;
-      color: white;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
-    }
+<select id="business">
+  <option>Do'kon turi</option>
+  <option>Mini market</option>
+  <option>Kiyim do'koni</option>
+  <option>Apteka</option>
+  <option>Boshqa</option>
+</select>
 
-    .container {
-      width: 90%;
-      max-width: 420px;
-      background: #111;
-      padding: 25px;
-      border-radius: 18px;
-      box-shadow: 0 0 25px rgba(255,255,255,0.05);
-      border: 1px solid #222;
-    }
+<select id="problem">
+  <option>Asosiy muammo</option>
+  <option>Hisob-kitob qiyin</option>
+  <option>Ombor nazorati yo'q</option>
+  <option>Kassa chalkash</option>
+</select>
 
-    h1 {
-      font-size: 22px;
-      margin-bottom: 5px;
-    }
+<select id="interest">
+  <option>Qiziqish darajasi</option>
+  <option>Hozir kerak</option>
+  <option>1 hafta ichida</option>
+  <option>Faqat qiziqyapman</option>
+</select>
 
-    p {
-      font-size: 13px;
-      color: #aaa;
-      margin-bottom: 20px;
-    }
-
-    input, textarea {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 12px;
-      background: #1a1a1a;
-      border: 1px solid #333;
-      border-radius: 10px;
-      color: white;
-      outline: none;
-    }
-
-    button {
-      width: 100%;
-      padding: 12px;
-      background: white;
-      color: black;
-      border: none;
-      border-radius: 10px;
-      font-weight: bold;
-      cursor: pointer;
-      transition: 0.2s;
-    }
-
-    button:hover {
-      background: #ddd;
-    }
-
-    .small {
-      font-size: 11px;
-      color: #666;
-      margin-top: 10px;
-      text-align: center;
-    }
-  </style>
-</head>
-
-<body>
-
-<div class="container">
-  <h1>Premium Lead System</h1>
-  <p>Ismingiz va raqamingizni qoldiring — siz bilan bog‘lanamiz</p>
-
-  <input type="text" id="name" placeholder="Ismingiz"/>
-  <input type="text" id="phone" placeholder="Telefon raqam"/>
-  <textarea id="msg" placeholder="Qo‘shimcha xabar (ixtiyoriy)"></textarea>
-
-  <button onclick="sendData()">Yuborish</button>
-
-  <div class="small">⚡ Powered by Telegram Automation</div>
-</div>
-
-<script>
-function sendData() {
-  let name = document.getElementById("name").value;
-  let phone = document.getElementById("phone").value;
-  let msg = document.getElementById("msg").value;
-
-  if(!name || !phone){
-    alert("Ism va telefon majburiy!");
-    return;
-  }
-
-  let text =
-`🔥 Yangi Lead!
-👤 Ism: ${name}
-📞 Telefon: ${phone}
-💬 Xabar: ${msg}`;
-
-  // TELEGRAM BOT SETTINGS
-  let token = "8866953084:AAHL1IUcR-DK827782K4gUdaRMM48qV63Ig";
-  let chat_id = "5206100660";
-
-  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json"
-    },
-    body: JSON.stringify({
-      chat_id: chat_id,
-      text: text
-    })
-  }).then(res => {
-    alert("Yuborildi! Tez orada bog‘lanamiz.");
-    document.getElementById("name").value = "";
-    document.getElementById("phone").value = "";
-    document.getElementById("msg").value = "";
-  });
-}
-</script>
-
-</body>
-</html>
+<textarea id="msg" placeholder="Qo‘shimcha xabar"></textarea>
