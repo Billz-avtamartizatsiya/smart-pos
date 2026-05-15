@@ -1,203 +1,130 @@
 <!DOCTYPE html>
 <html lang="uz">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Billz POS - Kassa Tizimi</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Premium Business Lead</title>
 
-<style>
-*{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-  font-family: Arial, sans-serif;
-}
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #0a0a0a;
+      color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
 
-body{
-  background:#0b0b0f;
-  color:white;
-}
+    .container {
+      width: 90%;
+      max-width: 420px;
+      background: #111;
+      padding: 25px;
+      border-radius: 18px;
+      box-shadow: 0 0 25px rgba(255,255,255,0.05);
+      border: 1px solid #222;
+    }
 
-/* HERO */
-.hero{
-  height:100vh;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:20px;
-}
+    h1 {
+      font-size: 22px;
+      margin-bottom: 5px;
+    }
 
-.card{
-  max-width:600px;
-}
+    p {
+      font-size: 13px;
+      color: #aaa;
+      margin-bottom: 20px;
+    }
 
-h1{
-  font-size:40px;
-  margin-bottom:15px;
-}
+    input, textarea {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 12px;
+      background: #1a1a1a;
+      border: 1px solid #333;
+      border-radius: 10px;
+      color: white;
+      outline: none;
+    }
 
-p{
-  color:#aaa;
-  font-size:16px;
-  line-height:1.6;
-}
+    button {
+      width: 100%;
+      padding: 12px;
+      background: white;
+      color: black;
+      border: none;
+      border-radius: 10px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: 0.2s;
+    }
 
-/* BUTTON */
-button{
-  margin-top:25px;
-  padding:15px 25px;
-  border:none;
-  border-radius:12px;
-  background:white;
-  color:black;
-  font-weight:bold;
-  cursor:pointer;
-  transition:0.3s;
-}
+    button:hover {
+      background: #ddd;
+    }
 
-button:hover{
-  transform:scale(1.05);
-}
-
-/* SECTION */
-.section{
-  padding:80px 20px;
-  max-width:900px;
-  margin:auto;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-  margin-top:30px;
-}
-
-.box{
-  background:#15151c;
-  padding:20px;
-  border-radius:14px;
-  border:1px solid #222;
-}
-
-/* FORM */
-.form{
-  display:none;
-  margin-top:20px;
-}
-
-input{
-  width:100%;
-  padding:12px;
-  margin-top:10px;
-  border-radius:10px;
-  border:none;
-  background:#1a1a22;
-  color:white;
-}
-
-.small{
-  color:#888;
-  font-size:14px;
-  margin-top:10px;
-}
-</style>
+    .small {
+      font-size: 11px;
+      color: #666;
+      margin-top: 10px;
+      text-align: center;
+    }
+  </style>
 </head>
 
 <body>
 
-<!-- HERO -->
-<div class="hero">
-  <div class="card">
-    <h1>Do‘koningizni avtomatlashtiring</h1>
-    <p>
-      Kassa, savdo va omborni bir joyda boshqaring.  
-      Hammasi oddiy, tez va tushunarli.
-    </p>
+<div class="container">
+  <h1>Premium Lead System</h1>
+  <p>Ismingiz va raqamingizni qoldiring — siz bilan bog‘lanamiz</p>
 
-    <button onclick="openForm()">Demo olish</button>
+  <input type="text" id="name" placeholder="Ismingiz"/>
+  <input type="text" id="phone" placeholder="Telefon raqam"/>
+  <textarea id="msg" placeholder="Qo‘shimcha xabar (ixtiyoriy)"></textarea>
 
-    <div class="form" id="form">
-      <input id="name" placeholder="Ismingiz">
-      <input id="phone" placeholder="Telefon raqam">
-      <button onclick="send()">Yuborish</button>
-    </div>
+  <button onclick="sendData()">Yuborish</button>
 
-    <p class="small">500+ do‘kon foydalanmoqda</p>
-  </div>
-</div>
-
-<!-- FEATURES -->
-<div class="section">
-  <h2>Billz POS nima qiladi?</h2>
-
-  <div class="grid">
-    <div class="box">
-      <h3>📊 Savdo nazorati</h3>
-      <p>Siz har bir sotuvni real vaqt rejimida ko‘rasiz.</p>
-    </div>
-
-    <div class="box">
-      <h3>📦 Ombor</h3>
-      <p>Tovarlar soni avtomatik yangilanadi.</p>
-    </div>
-
-    <div class="box">
-      <h3>⚡ Tez ishlash</h3>
-      <p>Oddiy va tez — 1 kunda o‘rganib olasiz.</p>
-    </div>
-  </div>
-</div>
-
-<!-- FAQ SIMPLE -->
-<div class="section">
-  <h2>Ko‘p so‘raladigan savollar</h2>
-
-  <div class="grid">
-    <div class="box">
-      <h3>Bu nima?</h3>
-      <p>Do‘kon uchun kassa va hisob tizimi.</p>
-    </div>
-
-    <div class="box">
-      <h3>Qiyinmi?</h3>
-      <p>Yo‘q, juda sodda va tushunarli.</p>
-    </div>
-
-    <div class="box">
-      <h3>Nima beradi?</h3>
-      <p>Savdo va omborni avtomatik qiladi.</p>
-    </div>
-  </div>
+  <div class="small">⚡ Powered by Telegram Automation</div>
 </div>
 
 <script>
-function openForm(){
-  document.getElementById("form").style.display = "block";
-}
-
-function send(){
-
+function sendData() {
   let name = document.getElementById("name").value;
   let phone = document.getElementById("phone").value;
+  let msg = document.getElementById("msg").value;
+
+  if(!name || !phone){
+    alert("Ism va telefon majburiy!");
+    return;
+  }
 
   let text =
-`🔥 YANGI LEAD (Billz POS)
+`🔥 Yangi Lead!
+👤 Ism: ${name}
+📞 Telefon: ${phone}
+💬 Xabar: ${msg}`;
 
-👤 ${name}
-📞 ${phone}`;
+  // TELEGRAM BOT SETTINGS
+  let token = "8866953084:AAHL1IUcR-DK827782K4gUdaRMM48qV63Ig";
+  let chat_id = "5206100660";
 
-  let token = "BOT_TOKEN";
-  let chat_id = "CHAT_ID";
-
-  let url = "https://api.telegram.org/bot"+token+
-  "/sendMessage?chat_id="+chat_id+
-  "&text="+encodeURIComponent(text);
-
-  fetch(url);
-
-  alert("Tez orada bog‘lanamiz!");
+  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      chat_id: chat_id,
+      text: text
+    })
+  }).then(res => {
+    alert("Yuborildi! Tez orada bog‘lanamiz.");
+    document.getElementById("name").value = "";
+    document.getElementById("phone").value = "";
+    document.getElementById("msg").value = "";
+  });
 }
 </script>
 
