@@ -16,8 +16,8 @@ function handleSubmit(event) {
 🏪 Do‘kon: ${shop}
 💬 Xabar: ${msg}`;
 
-  let token = "BOT_TOKEN_HERE";
-  let chat_id = "CHAT_ID_HERE";
+  let token = "8866953084:AAExmoeRPGBPUCrbNos-0fVR-FJW-GpgJL0";
+  let chat_id = "5206100660";
 
   fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
     method: "POST",
