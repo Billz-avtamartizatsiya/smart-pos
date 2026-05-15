@@ -3,130 +3,94 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Billz POS - Kassa Tizimi</title>
-
-  <style>
-    body{
-      margin:0;
-      font-family: Arial, sans-serif;
-      background:#0b0b0b;
-      color:white;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      height:100vh;
-    }
-
-    .card{
-      width:90%;
-      max-width:420px;
-      background:#111;
-      padding:30px;
-      border-radius:16px;
-      border:1px solid #222;
-      text-align:center;
-      box-shadow:0 0 25px rgba(255,255,255,0.05);
-    }
-
-    h1{
-      font-size:24px;
-      margin-bottom:10px;
-    }
-
-    p{
-      color:#aaa;
-      font-size:14px;
-      line-height:1.5;
-    }
-
-    ul{
-      text-align:left;
-      margin-top:15px;
-      padding-left:18px;
-      color:#ddd;
-      font-size:14px;
-    }
-
-    button{
-      margin-top:20px;
-      width:100%;
-      padding:14px;
-      border:none;
-      border-radius:10px;
-      background:white;
-      color:black;
-      font-weight:bold;
-      cursor:pointer;
-    }
-
-    .form{
-      display:none;
-      margin-top:15px;
-    }
-
-    input{
-      width:100%;
-      padding:12px;
-      margin-top:10px;
-      border-radius:8px;
-      border:none;
-      background:#1a1a1a;
-      color:white;
-    }
-  </style>
+  <meta name="description" content="Billz POS - Do'konlarni avtomatlashtirish tizimi. Savdo nazorati, ombor hisoboti, tez ishlash.">
+  <meta name="keywords" content="kassa tizim, POS tizim, do'kon avtomatlashtirish, savdo nazorati, ombor hisoboti">
+  <title>Billz POS - Do'konlarni Avtomatlashtirish | Kassa Tizimi</title>
+  <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
+  <nav class="navbar">
+    <div class="container">
+      <div class="nav-brand">Billz POS</div>
+      <ul class="nav-menu">
+        <li><a href="#features">Xususiyatlar</a></li>
+        <li><a href="#pricing">Narxlar</a></li>
+        <li><a href="#contact">Murojaat</a></li>
+      </ul>
+    </div>
+  </nav>
 
-<div class="card">
-  <h1>Billz POS</h1>
-  <p>
-    Do‘koningizni to‘liq avtomatlashtiruvchi kassa tizimi.  
-    Savdo, ombor va hisobot — hammasi bir joyda.
-  </p>
+  <section class="hero">
+    <div class="container">
+      <h1>Do'koningizni Avtomatlashtiring</h1>
+      <p>Billz POS yordamida savdo va omborni to'liq nazorat qiling</p>
+      <button class="btn btn-primary" onclick="scrollTo('contact')">Demo So'rash</button>
+    </div>
+  </section>
 
-  <ul>
-    <li>📊 Savdoni avtomatik hisoblaydi</li>
-    <li>📦 Ombor nazoratini yuritadi</li>
-    <li>⚡ Tez va sodda ishlaydi</li>
-  </ul>
+  <section id="features" class="features">
+    <div class="container">
+      <h2>Billz POS Xususiyatlari</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <h3>📊 Savdo Nazorati</h3>
+          <p>Haqiqiy vaqtda savdo statistikasini ko'ring</p>
+        </div>
+        <div class="feature-card">
+          <h3>📦 Ombor Hisoboti</h3>
+          <p>Tovar ombori avtomatik hisoblanadi</p>
+        </div>
+        <div class="feature-card">
+          <h3>⚡ Tez Ishlash</h3>
+          <p>Lightning-fast performance hamma vaqt</p>
+        </div>
+        <div class="feature-card">
+          <h3>💳 Ko'p To'lov</h3>
+          <p>Naqd, karta, mobile hammasini qabul qiling</p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <p style="margin-top:10px;color:#888">
-    500+ do‘kon allaqachon foydalanmoqda
-  </p>
+  <section id="pricing" class="pricing">
+    <div class="container">
+      <h2>Billz POS Tariffalar</h2>
+      <div class="pricing-grid">
+        <div class="pricing-card">
+          <h3>Boshlang'ich</h3>
+          <p class="price">$9/oy</p>
+          <button class="btn btn-outline">Tanlang</button>
+        </div>
+        <div class="pricing-card featured">
+          <h3>Professional</h3>
+          <p class="price">$29/oy</p>
+          <button class="btn btn-primary">Tanlang</button>
+        </div>
+        <div class="pricing-card">
+          <h3>Enterprise</h3>
+          <p class="price">$99/oy</p>
+          <button class="btn btn-outline">Murojaat</button>
+        </div>
+      </div>
+    </div>
+  </section>
 
-  <button onclick="openForm()">Demo olish</button>
+  <section id="contact" class="contact">
+    <div class="container">
+      <h2>Demo So'rash</h2>
+      <form class="contact-form" onsubmit="handleSubmit(event)">
+        <input type="text" placeholder="Ismingiz" required>
+        <input type="tel" placeholder="Telefon: xx-xxx-xx-xx" required>
+        <input type="email" placeholder="Email" required>
+        <button type="submit" class="btn btn-primary">Yuborish</button>
+      </form>
+    </div>
+  </section>
 
-  <div class="form" id="form">
-    <input id="name" placeholder="Ismingiz">
-    <input id="phone" placeholder="Telefon raqam">
-    <button onclick="send()">Yuborish</button>
-  </div>
-</div>
+  <footer class="footer">
+    <p>&copy; 2026 Billz POS - Do'konlarni avtomatlashtirish tizimi</p>
+  </footer>
 
-<script>
-function openForm(){
-  document.getElementById("form").style.display = "block";
-}
-
-function send(){
-  let name = document.getElementById("name").value;
-  let phone = document.getElementById("phone").value;
-
-  let text =
-`🔥 YANGI LEAD (Billz POS)
-
-👤 Ism: ${name}
-📞 Telefon: ${phone}`;
-
-  let token = "BOT_TOKEN";
-  let chat_id = "CHAT_ID";
-
-  fetch(`https://api.telegram.org/bot${token}/sendMessage?chat_id=${chat_id}&text=${encodeURIComponent(text)}`);
-
-  alert("Tez orada bog‘lanamiz!");
-}
-</script>
-
+  <script src="script.js"></script>
 </body>
 </html>
