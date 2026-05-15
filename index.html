@@ -8,28 +8,49 @@
   <style>
     body{
       margin:0;
-      font-family: Arial;
-      background:#0a0a0a;
+      font-family: Arial, sans-serif;
+      background:#0b0b0b;
       color:white;
       display:flex;
       justify-content:center;
       align-items:center;
       height:100vh;
-      text-align:center;
     }
 
-    .box{
-      max-width:400px;
+    .card{
+      width:90%;
+      max-width:420px;
+      background:#111;
       padding:30px;
+      border-radius:16px;
+      border:1px solid #222;
+      text-align:center;
+      box-shadow:0 0 25px rgba(255,255,255,0.05);
     }
 
-    h1{font-size:26px;}
-    p{color:#aaa}
+    h1{
+      font-size:24px;
+      margin-bottom:10px;
+    }
+
+    p{
+      color:#aaa;
+      font-size:14px;
+      line-height:1.5;
+    }
+
+    ul{
+      text-align:left;
+      margin-top:15px;
+      padding-left:18px;
+      color:#ddd;
+      font-size:14px;
+    }
 
     button{
       margin-top:20px;
-      padding:15px;
       width:100%;
+      padding:14px;
       border:none;
       border-radius:10px;
       background:white;
@@ -38,28 +59,43 @@
       cursor:pointer;
     }
 
+    .form{
+      display:none;
+      margin-top:15px;
+    }
+
     input{
       width:100%;
       padding:12px;
       margin-top:10px;
       border-radius:8px;
       border:none;
-    }
-
-    .form{
-      display:none;
-      margin-top:20px;
+      background:#1a1a1a;
+      color:white;
     }
   </style>
 </head>
 
 <body>
 
-<div class="box">
-  <h1>Do‘koningizni avtomatlashtiring</h1>
-  <p>Kassa, savdo va ombor — hammasi bir joyda</p>
+<div class="card">
+  <h1>Billz POS</h1>
+  <p>
+    Do‘koningizni to‘liq avtomatlashtiruvchi kassa tizimi.  
+    Savdo, ombor va hisobot — hammasi bir joyda.
+  </p>
 
-  <button onclick="openForm()">📩 Demo olish</button>
+  <ul>
+    <li>📊 Savdoni avtomatik hisoblaydi</li>
+    <li>📦 Ombor nazoratini yuritadi</li>
+    <li>⚡ Tez va sodda ishlaydi</li>
+  </ul>
+
+  <p style="margin-top:10px;color:#888">
+    500+ do‘kon allaqachon foydalanmoqda
+  </p>
+
+  <button onclick="openForm()">Demo olish</button>
 
   <div class="form" id="form">
     <input id="name" placeholder="Ismingiz">
@@ -77,7 +113,11 @@ function send(){
   let name = document.getElementById("name").value;
   let phone = document.getElementById("phone").value;
 
-  let text = `🔥 Yangi Lead\n👤 ${name}\n📞 ${phone}`;
+  let text =
+`🔥 YANGI LEAD (Billz POS)
+
+👤 Ism: ${name}
+📞 Telefon: ${phone}`;
 
   let token = "BOT_TOKEN";
   let chat_id = "CHAT_ID";
