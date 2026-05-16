@@ -443,6 +443,47 @@ Tez orada siz bilan bog'lanamiz
 </div>
 
 </footer>
+<script>
 
+function handleSubmit(event){
+
+event.preventDefault();
+
+const name = document.querySelector('input[type="text"]').value;
+const phone = document.querySelector('input[type="tel"]').value;
+const shop = document.querySelectorAll('input[type="text"]')[1].value;
+const message = document.querySelector('textarea').value;
+
+const token = "8866953084:AAExmoeRPGBPUCrbNos-0fVR-FJW-GpgJL0";
+const chat_id = "5206100660";
+
+const text =
+🛒 Yangi so'rov!
+
+👤 Ism: ${name}
+📞 Telefon: ${phone}
+🏪 Do'kon: ${shop}
+💬 Xabar: ${message};
+
+fetch(https://api.telegram.org/bot${token}/sendMessage,{
+method:"POST",
+headers:{
+"Content-Type":"application/json"
+},
+body:JSON.stringify({
+chat_id:chat_id,
+text:text
+})
+})
+.then(res => {
+alert("So'rov yuborildi!");
+})
+.catch(err => {
+alert("Xatolik yuz berdi!");
+});
+
+}
+
+</script>
 </body>
 </html>
