@@ -37,3 +37,27 @@ function handleSubmit(event) {
     alert("Xatolik yuz berdi!");
   });
 }
+// Smooth scroll to contact
+function scrollToContact() {
+  const contactSection = document.getElementById('contact');
+  if (contactSection) {
+    contactSection.scrollIntoView({ behavior: 'smooth' });
+  }
+}
+
+// Handle form submission
+function handleSubmit(event) {
+  event.preventDefault();
+  
+  const form = event.target;
+  const name = form.name.value;
+  const phone = form.phone.value;
+  const email = form.email.value;
+  const shop = form.shop.value;
+  
+  // Show success message
+  alert(`Rahmat, ${name}!\n\nSizga tez orada murojaat qilamiz.\n\nTelefon: ${phone}\nEmail: ${email}\nDo'kon: ${shop}`);
+  
+  // Reset form
+  form.reset();
+}
